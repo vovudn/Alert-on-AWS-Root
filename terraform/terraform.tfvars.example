@@ -1,0 +1,38 @@
+# ============================================
+# Example Terraform Variables
+# Copy this file to terraform.tfvars and customize
+# ============================================
+
+# AWS Configuration
+aws_region  = "us-east-1"
+environment = "prod"
+
+# Alert Configuration (REQUIRED)
+alert_email = "vovudn95@gmail.com"
+alert_phone = "+84774061343"  # Optional: Remove or leave empty to disable SMS
+
+# Project Configuration
+project_name = "root-login-alert"
+
+# CloudTrail Configuration
+cloudtrail_name        = "root-login-monitoring"
+cloudtrail_bucket_name = ""  # Leave empty for auto-generated name
+
+# CloudWatch Configuration
+log_retention_days       = 30
+metric_namespace         = "Security"
+alarm_evaluation_periods = 1
+alarm_period_seconds     = 300
+alarm_threshold          = 1
+
+# Lambda Configuration
+enable_lambda       = false  # Set to true to enable auto-disable of root credentials
+lambda_timeout      = 60
+lambda_memory_size  = 128
+
+# Additional Tags
+additional_tags = {
+  Team       = "Security"
+  CostCenter = "IT-Security"
+  Compliance = "CIS-AWS"
+}
